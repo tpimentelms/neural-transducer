@@ -8,7 +8,7 @@ import sys
 from random import choice, random
 from typing import Any, List
 
-sys.path.append("src")
+sys.path.append(os.path.join(sys.path[0],'..', '..', 'src'))
 import align  # noqa: E402
 
 
@@ -129,7 +129,7 @@ args = parser.parse_args()
 
 DATA_PATH = args.datapath
 L2 = args.language
-LOW_PATH = os.path.join(DATA_PATH, L2 + ".trn")
+LOW_PATH = os.path.join(DATA_PATH, L2 + ".train")
 DEV_PATH = os.path.join(DATA_PATH, L2 + ".dev")
 
 N = args.examples

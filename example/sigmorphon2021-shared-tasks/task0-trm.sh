@@ -19,14 +19,13 @@ embed_dim=256
 nb_heads=4
 dropout=.4
 
-data_dir=data
+data_dir=split
 ckpt_dir=checkpoints/transformer
 
-python src/train.py \
+python transducer/src/train.py \
     --dataset sigmorphon17task1 \
-    --train $data_dir/$lang.trn \
+    --train $data_dir/$lang.train \
     --dev $data_dir/$lang.dev \
-    --test $data_dir/$lang.tst \
     --model $ckpt_dir/$arch/default/$lang \
     --embed_dim $embed_dim --src_hs $hs --trg_hs $hs --dropout $dropout --nb_heads $nb_heads \
     --label_smooth $label_smooth --total_eval $total_eval \
