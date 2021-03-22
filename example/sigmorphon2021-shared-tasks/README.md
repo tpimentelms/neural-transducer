@@ -8,14 +8,11 @@
 First download and augment [(Anastasopoulos and Neubig, 2019)](https://arxiv.org/abs/1908.05838) the data
 
 ```bash
-git clone https://github.com/sigmorphon2020/task0-data.git
-mkdir task0-data/original
-mv task0-data/DEVELOPMENT-LANGUAGES/*/* task0-data/original
-mv task0-data/SURPRISE-LANGUAGES/*/* task0-data/original
-mv task0-data/GOLD-TEST/* task0-data/original -f
+mkdir part1/original
+cp part1/development_languages/* part1/original
 
-bash example/sigmorphon2020-shared-tasks/augment.sh
-python example/sigmorphon2020-shared-tasks/task0-build-dataset.py all
+bash baselines/neural/example/sigmorphon2021-shared-tasks/augment.sh
+python baselines/neural/example/sigmorphon2021-shared-tasks/task0-build-dataset.py all
 ```
 
 Run the transducer [(Wu et al, 2021)](https://arxiv.org/abs/2005.10213), both one model per language and one model per language family.
