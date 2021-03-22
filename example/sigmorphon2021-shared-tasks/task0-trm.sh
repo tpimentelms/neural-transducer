@@ -19,7 +19,7 @@ embed_dim=256
 nb_heads=4
 dropout=.4
 
-data_dir=part1/processed/
+data_dir=part1/processed
 ckpt_dir=checkpoints/transformer
 
 python baselines/neural/src/train.py \
