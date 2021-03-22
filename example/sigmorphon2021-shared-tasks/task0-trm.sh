@@ -19,10 +19,10 @@ embed_dim=256
 nb_heads=4
 dropout=.4
 
-data_dir=split
+data_dir=part1/development_languages
 ckpt_dir=checkpoints/transformer
 
-python transducer/src/train.py \
+python baselines/neural/src/train.py \
     --dataset sigmorphon17task1 \
     --train $data_dir/$lang.train \
     --dev $data_dir/$lang.dev \
