@@ -19,14 +19,14 @@ embed_dim=256
 nb_heads=4
 dropout=.4
 
-data_dir=part1/processed/
+data_dir=part1/processed
 ckpt_dir=checkpoints/transformer
 
 python baselines/neural/src/train.py \
     --dataset sigmorphon17task1 \
-    --train $data_dir/$lang.train \
+    --train $data_dir/$lang.hall.train \
     --dev $data_dir/$lang.dev \
-    --model $ckpt_dir/$arch/default/$lang \
+    --model $ckpt_dir/hall-$arch/default/$lang \
     --embed_dim $embed_dim --src_hs $hs --trg_hs $hs --dropout $dropout --nb_heads $nb_heads \
     --label_smooth $label_smooth --total_eval $total_eval \
     --src_layer $layers --trg_layer $layers --max_norm 1 --lr $lr --shuffle \
