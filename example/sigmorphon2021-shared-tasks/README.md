@@ -1,0 +1,21 @@
+# SIGMORPHON 2021 Shared Task 0 Baseline
+
+- Ekaterina Vylomova, Jennifer White, Elizabeth Salesky, Sabrina J. Mielke, Shijie Wu, Edoardo Ponti, Rowan Hall Maudslay, Ran Zmigrod, Josef Valvoda, Svetlana Toldova, Francis Tyers, Elena Klyachko, Ilya Yegorov, Natalia Krizhanovsky, Paula Czarnowska, Irene Nikkarinen, Andrew Krizhanovsky, Tiago Pimentel, Lucas Torroba Hennigen, Christo Kirov, Garrett Nicolai, Adina Williams, Antonios Anastasopoulos, Hilaria Cruz, Eleanor Chodroff, Ryan Cotterell, Miikka Silfverberg, and Mans Hulden. [*SIGMORPHON 2020 Shared Task 0: Typologically Diverse Morphological Inflection*](https://www.aclweb.org/anthology/2020.sigmorphon-1.1/). SIGMORPHON. 2020. ([Experiments Detail](example/sigmorphon2020-shared-tasks))
+
+
+### Training from Scratch
+
+First download and augment [(Anastasopoulos and Neubig, 2019)](https://arxiv.org/abs/1908.05838) the data
+
+```bash
+mkdir part1/original
+cp part1/development_languages/* part1/original
+
+bash baselines/neural/example/sigmorphon2021-shared-tasks/augment.sh
+python baselines/neural/example/sigmorphon2021-shared-tasks/task0-build-dataset.py all
+```
+
+Run the transducer [(Wu et al, 2021)](https://arxiv.org/abs/2005.10213), both one model per language and one model per language family.
+```bash
+bash example/sigmorphon2021-shared-tasks/task0-launch.sh
+```

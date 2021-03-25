@@ -22,7 +22,7 @@ from ctypes import POINTER, c_int, c_void_p, cdll
 try:
     libalign = cdll.LoadLibrary("src/libalign.so")
 except OSError:
-    libalign = cdll.LoadLibrary("transducer/src/libalign.so")
+    libalign = cdll.LoadLibrary("baselines/neural/src/libalign.so")
 
 libalign_add_int_pair = libalign.add_int_pair
 libalign_clear_counts = libalign.clear_counts
